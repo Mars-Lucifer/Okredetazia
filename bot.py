@@ -3,7 +3,7 @@ from disnake.ext import commands
 import asyncio
 
 config = {
-    'token': 'MTE3NDc2OTYxMTkwMDczMTQwMg.GIRCEA.nfJjMAHiqfc5YWkW4wSagVwas1o8BWljHI_Qtg',
+    'token': 'token',
     'prefix': '>',
 }
 
