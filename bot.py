@@ -2,8 +2,15 @@ import disnake
 from disnake.ext import commands
 import asyncio
 
-config = {
-    'token': 'token',
+config = {}
+
+with open('config.txt', 'r') as file:
+    for line in file:
+        key, value = line.strip().split('=')
+        config[key.strip()] = value.strip()
+
+final_config = {
+    'token': config['token'],
     'prefix': '>',
 }
 
@@ -20,7 +27,7 @@ async def on_ready():
 async def rus(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('rus.txt', "r", encoding="utf-8") as file:
+    with open('sub/rus.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -32,7 +39,7 @@ async def rus(inter):
 async def mat(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('mat.txt', "r", encoding="utf-8") as file:
+    with open('sub/mat.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send(line.strip())
@@ -44,7 +51,7 @@ async def mat(inter):
 async def phis(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('phis.txt', "r", encoding="utf-8") as file:
+    with open('sub/phis.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -56,7 +63,7 @@ async def phis(inter):
 async def vi(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('vi.txt', "r", encoding="utf-8") as file:
+    with open('sub/vi.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -68,7 +75,7 @@ async def vi(inter):
 async def litr(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('litr.txt', "r", encoding="utf-8") as file:
+    with open('sub/litr.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -80,7 +87,7 @@ async def litr(inter):
 async def obj(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('obj.txt', "r", encoding="utf-8") as file:
+    with open('sub/obj.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -92,7 +99,7 @@ async def obj(inter):
 async def astro(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('astro.txt', "r", encoding="utf-8") as file:
+    with open('sub/astro.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -104,7 +111,7 @@ async def astro(inter):
 async def geo(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('geo.txt', "r", encoding="utf-8") as file:
+    with open('sub/geo.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
@@ -116,7 +123,19 @@ async def geo(inter):
 async def obshe(inter):
     await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
     await asyncio.sleep(5)
-    with open('obshe.txt', "r", encoding="utf-8") as file:
+    with open('sub/obshe.txt', "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            await inter.author.send("`" + line.strip() + "`")
+            await asyncio.sleep(1)
+            if i % 9 == 0:
+                await asyncio.sleep(600)
+
+@bot.slash_command(description="Английский язык")
+async def eng(inter):
+    await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
+    await asyncio.sleep(5)
+    with open('sub/eng.txt', "r", encoding="utf-8") as file:
         lines = file.readlines()
         for i, line in enumerate(lines, start=1):
             await inter.author.send("`" + line.strip() + "`")
