@@ -143,6 +143,18 @@ async def eng(inter):
             if i % 9 == 0:
                 await asyncio.sleep(600)
 
+@bot.slash_command(description="Информатика")
+async def info(inter):
+    await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
+    await asyncio.sleep(5)
+    with open('sub/info.txt', "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            await inter.author.send("`" + line.strip() + "`")
+            await asyncio.sleep(1)
+            if i % 9 == 0:
+                await asyncio.sleep(600)
+
 @bot.slash_command()
 async def test(inter):
     await inter.response.defer()
