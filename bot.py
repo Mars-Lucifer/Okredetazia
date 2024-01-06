@@ -167,6 +167,42 @@ async def hist(inter):
             if i % 9 == 0:
                 await asyncio.sleep(600)
 
+@bot.slash_command(description="Англиский специальный")
+async def eng_spec(inter):
+    await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
+    await asyncio.sleep(5)
+    with open('sub/eng_spec.txt', "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            await inter.author.send("`" + line.strip() + "`")
+            await asyncio.sleep(1)
+            if i % 9 == 0:
+                await asyncio.sleep(600)
+
+@bot.slash_command(description="ОАиП")
+async def oaip(inter):
+    await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
+    await asyncio.sleep(5)
+    with open('sub/oaip.txt', "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            await inter.author.send("`" + line.strip() + "`")
+            await asyncio.sleep(1)
+            if i % 9 == 0:
+                await asyncio.sleep(600)
+
+@bot.slash_command(description="ОП БД")
+async def opbd(inter):
+    await inter.send('Отправка сообщений начнется через 5 секунт с интервалом 10 минут')
+    await asyncio.sleep(5)
+    with open('sub/opbd.txt', "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i, line in enumerate(lines, start=1):
+            await inter.author.send("`" + line.strip() + "`")
+            await asyncio.sleep(1)
+            if i % 9 == 0:
+                await asyncio.sleep(600)
+
 @bot.slash_command()
 async def test(inter):
     await inter.response.defer()
